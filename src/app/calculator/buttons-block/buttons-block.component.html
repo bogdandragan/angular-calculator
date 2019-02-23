@@ -1,11 +1,6 @@
-<div>
-  <div class="calcValues">
-    <app-button [btnValue]="'AC'"></app-button>
-    <app-button [btnValue]="'C'"></app-button>
-    <app-button *ngFor="let calcValue of calcValues" [btnValue]="calcValue"></app-button>
+ <div class="calc-values">
+    <app-button *ngFor="let regularValue of regularValues" [button]="regularValue" class="button noselect"></app-button>
   </div>
-  <div class="operations">
-    <app-button *ngFor="let operation of operations" [btnValue]="operation"></app-button>
-    <app-button [btnValue]="'='"></app-button>
+  <div class="calc-operations">
+    <app-button *ngFor="let operation of operations" [button]="operation" class="button noselect"></app-button>
   </div>
-</div>

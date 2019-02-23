@@ -1,36 +1,86 @@
 body{
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.app-container{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
-.container{
-  display:flex;
-  flex-wrap: wrap;
-  width: 400px;
-}
-
-.buttons,.result{
+.calc-container{
   display: flex;
-  flex: 1;
   flex-wrap: wrap;
+  flex: 0 1 60%;
+  height: 100%;
+  padding: 20px 10px;
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+  max-width: 60%;
 }
-.result{
+
+.calc-result-container, .calc-buttons-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 100%;
+}
+
+.calc-result-container{
   height: 50px;
-  background: #000;
-  color:#fff;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  margin: 5px 2px;
+  min-width: 0;
+  .screen{
+    display: flex;
+    flex: 0 1 100%;
+    justify-content: flex-end;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    line-height: 50px;
+    padding: 0 5px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+.calc-values{
+  display: flex;
+  flex: 3 1;
+  flex-wrap: wrap;
+  .button{
+    flex: 0 1 33.3%;
+  }
+}
+
+.calc-operations{
+  display:flex;
+  flex: 1 1;
+  flex-wrap: wrap;
+  .button{
+    flex: 0 1 100%;
+  }
 }
 
 .button{
   display:flex;
-  flex: 0 1 25%;
-  justify-content: center;
-  align-items: center;
   height: 50px;
-  border: 1px solid black;
-  border-top:none;
-  border-left:none;
-  cursor: pointer;
-  background: -webkit-linear-gradient(top,#d2d2d2,#ddd);
-  font-size:2em;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.error{
+  border-color: red;
 }
 

@@ -3,14 +3,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({name: 'formatOperation'})
 export class FormatOperationPipe implements PipeTransform {
     transform(value: string): string {
-        let displayValue = "";
+      const tempElement = document.createElement("i");
+      let displayValue = "";
         switch(value){
             case "*":{
-                displayValue = "x";
+              tempElement.innerHTML = "&times;";
+              displayValue = tempElement.innerText;
                 break;
             }
             case "/":{
-                displayValue = "/";
+                tempElement.innerHTML = "&divide;";
+                displayValue = tempElement.innerText;
                 break;
             }
             default:{

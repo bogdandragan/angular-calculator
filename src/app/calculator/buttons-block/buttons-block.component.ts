@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CalculatorService} from "../calculator.service";
+import {Button} from "../models/button.model"
+import {ButtonType} from "../enums/button-type.enum"
 
 @Component({
   selector: 'app-buttons-block',
@@ -8,23 +10,25 @@ import {CalculatorService} from "../calculator.service";
 })
 export class ButtonsBlockComponent implements OnInit {
 
-  operations : string[] = [];
-  calcValues : string[] = [];
+  regularValues : Button[] = [];
+  operations : Button[] = [];
 
   constructor(private calculatorService: CalculatorService) { }
 
   ngOnInit() {
     this.getOperations();
-    this.getCalcValues();
+    this.getRegularValues();
   }
 
   getOperations(){
-    this.operations = this.calculatorService.getOperations();
+     this.operations = this.calculatorService.getCalcButtons().filter((btn:Button)=>{
+      return btn.type == ButtonType.OPERATION || btn.type == ButtonType.SUBMIT
+    });
   }
 
-  getCalcValues(){
-    this.calcValues = this.calculatorService.getCalcValues();
-
+  getRegularValues(){
+    this.regularValues = this.calculatorService.getCalcButtons().filter((btn:Button)=>{
+      return btn.type != ButtonType.OPERATION && btn.type != ButtonType.SUBMIT
+    });
   }
-
 }
