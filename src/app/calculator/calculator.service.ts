@@ -56,7 +56,6 @@ export class CalculatorService {
       this.result = "";
     }
     this.result += value;
-    console.log(this.result);
     this.resultChanged.next(this.result);
   }
 

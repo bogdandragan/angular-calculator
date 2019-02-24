@@ -2,22 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CalcAppComponent } from './calc-app/calc-app.component';
-import { ButtonComponent } from './calculator/buttons-block/button/button.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { ResultBlockComponent } from './calculator/result-block/result-block.component';
 import { ButtonsBlockComponent } from './calculator/buttons-block/buttons-block.component';
-import { CalculatorComponent } from './calculator/calculator.component';
+import { ButtonComponent } from './calculator/buttons-block/button/button.component';
 import { FormatOperationPipe } from "./calculator/shared/format-operation.pipe";
 import { CalcHighlightButtonDirective } from './calculator/shared/calc-highlight-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalcAppComponent,
-    ButtonComponent,
+    CalculatorComponent,
     ResultBlockComponent,
     ButtonsBlockComponent,
-    CalculatorComponent,
+    ButtonComponent,
     FormatOperationPipe,
     CalcHighlightButtonDirective
   ],
